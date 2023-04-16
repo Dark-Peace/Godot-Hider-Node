@@ -28,8 +28,6 @@ func _ready():
 		active = false
 		add_to_group("@Hider")
 		_hide_nodes()
-#		get_parent().child_entered_tree.connect(update_list)
-#	 	get_parent().child_exiting_tree.connect(update_list)
 
 func update_list(_node:Node=null, init:bool=false):
 	if not get_parent(): return
