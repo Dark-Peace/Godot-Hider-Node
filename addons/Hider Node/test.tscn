@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3vy6br4m28bx"]
+
+[ext_resource type="Texture2D" uid="uid://dmmjrd3hnwewq" path="res://icon.png" id="1_8qep4"]
+[ext_resource type="Script" path="res://addons/Hider Node/Hider.gd" id="2_vxi81"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(466, 237)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="Node2D"]
+position = Vector2(53, -13)
+texture = ExtResource("1_8qep4")
+
+[node name="Icon2" type="Sprite2D" parent="Node2D"]
+visible = false
+position = Vector2(165, -128)
+texture = ExtResource("1_8qep4")
+
+[node name="Icon4" type="Sprite2D" parent="Node2D"]
+position = Vector2(302, -16)
+texture = ExtResource("1_8qep4")
+
+[node name="Hider" type="Node" parent="Node2D"]
+script = ExtResource("2_vxi81")
+enabled = true
+except_list = Array[String](["Icon"])
+saved_states = {
+"Icon2": false,
+"Icon4": true
+}
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="Node2D2"]
+position = Vector2(-210, 55)
+texture = ExtResource("1_8qep4")
+
+[node name="Icon2" type="Sprite2D" parent="Node2D2"]
+position = Vector2(-307, -23)
+texture = ExtResource("1_8qep4")
+
+[node name="Icon3" type="Sprite2D" parent="Node2D2"]
+position = Vector2(-134, 197)
+texture = ExtResource("1_8qep4")
