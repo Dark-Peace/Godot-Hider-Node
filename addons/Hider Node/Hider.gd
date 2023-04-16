@@ -14,6 +14,7 @@ enum EDITOR {Default, ShowAll}
 
 @export var except_list:Array[String] = []
 
+@export_group("Data")
 @export var saved_states:Dictionary = {} # {node: visible:bool}
 
 
