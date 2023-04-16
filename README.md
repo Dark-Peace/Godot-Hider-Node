@@ -12,4 +12,4 @@ Nodes are hidden by changing their modulate value. However, the Hider stores the
 
 It has a bunch of bonus properties to make your workflow even better, everything is detailed in the [documentation](https://docs.google.com/document/d/1y2aPsn72dOxQ-wBNGqLlQvrw9-SV_z12a1MradBglF4/edit?usp=sharing)
 
-![image](https://user-images.githubusercontent.com/74102789/232339314-996f5208-e5ed-48d1-9736-589babf002ba.png)
+![image](https://media.discordapp.net/attachments/938432591848157215/1097194746650312730/Godot_v4.0-stable_win64_4Y1dYjn6Xk.gif?width=1166&height=571)
