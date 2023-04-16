@@ -5,6 +5,8 @@ class_name Hider
 @export var enabled:bool = false : set = enable
 var active:bool = false
 
+@export var HIDDEN_COLOR:Color = Color.TRANSPARENT
+
 enum GAMESTART {Default, HideAll, CurrentState}
 @export var on_game_start:GAMESTART = GAMESTART.Default
 enum EDITOR {Default, ShowAll}
@@ -30,19 +32,21 @@ func _ready():
 
 func update_list(_node:Node=null, init:bool=false):
 	if not get_parent(): return
+	
 	saved_states.clear()
 	for node in get_parent().get_children():
 		if node.name in except_list or not node.has_signal("visibility_changed"): continue
+		
 		if init: node.renamed.connect(update_list)
-		else: saved_states[node.name] = node.visible
+		else: saved_states[node.name] = node.modulate
 
 func show_nodes():
 	if not enabled: return
 	match editor_behavior:
 		EDITOR.Default:
-			for node in saved_states.keys(): get_parent().get_node(node).visible = saved_states[node]
+			for node in saved_states.keys(): get_parent().get_node(node).modulate = saved_states[node]
 		EDITOR.ShowAll:
-			for node in saved_states.keys(): get_parent().get_node(node).visible = true
+			for node in saved_states.keys(): get_parent().get_node(node).modulate = Color.WHITE
 
 func hide_nodes():
 	update_list()
@@ -52,13 +56,13 @@ func _hide_nodes():
 	if not enabled: return
 	for node in get_parent().get_children():
 		if node.name in except_list or not node.has_signal("visibility_changed"): continue
-		node.visible = false
+		node.modulate = HIDDEN_COLOR
 
 func enable(value):
 	enabled = value
 	update_list()
 	if not enabled:
-		for node in saved_states.keys(): get_parent().get_node(node).visible = saved_states[node]
+		for node in saved_states.keys(): get_parent().get_node(node).modulate = saved_states[node]
 
 func is_node_visible(node:Node):
 	return saved_states[node.name]

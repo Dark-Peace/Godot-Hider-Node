@@ -13,7 +13,6 @@ position = Vector2(53, -13)
 texture = ExtResource("1_8qep4")
 
 [node name="Icon2" type="Sprite2D" parent="Node2D"]
-visible = false
 position = Vector2(165, -128)
 texture = ExtResource("1_8qep4")
 
@@ -26,8 +25,8 @@ script = ExtResource("2_vxi81")
 enabled = true
 except_list = Array[String](["Icon"])
 saved_states = {
-"Icon2": false,
-"Icon4": true
+"Icon2": Color(1, 1, 1, 1),
+"Icon4": Color(1, 1, 1, 1)
 }
 
 [node name="Node2D2" type="Node2D" parent="."]
