@@ -1,6 +1,6 @@
 # Godot Hider Node
 
-Sick of having nodes you don't need all over your scenes ? You don't want to see them all but you don't want to have to toggle their visibility all the time ? This is for you ! Add it as a child to a parent node and that parent's children will only be visible in editor when you select a node inside that parent's subtree. + other similar behaviors.
+Sick of having nodes you don't need all over your scenes ? You don't want to see them all but you don't want to have to toggle their visibility all the time ? This is for you ! Add it as a child to a parent node and that parent's children will only be visible in editor when you select a node inside that parent's subtree. + other similar behaviors. It works in any scene : 2D, 3D, Controls,...
 
 Simple to use :
   1. Add the Hider to a parent node
